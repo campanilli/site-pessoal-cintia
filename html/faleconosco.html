@@ -29,12 +29,12 @@
                     <!--<li class="navBar__item"><a href="./portfolio.html" class="navBar__link">Portfólio</a></li>-->
                     <!--<li class="navBar__item"><a href="./blog.html" class="navBar__link">Blog</a></li>-->
                     <!--<li class="navBar__item"><a href="./favorites.html"class="navBar__link">Favoritos</a></li>-->
-                    <!--<li class="navBar__item"><a href="./wishlist.html"class="navBar__link">Wishlist</a></li>    -->
+                    <!--<li class="navBar__item"><a href="./wishlist.html"class="navBar__link">Wishlist</a></li>-->
                     <li class="navBar__item--faleconosco">Fale Conosco</li>
                 </ul>
                 <div class="burgerIcon">
                     <span class="burgerIcon__bar"></span>
-                    <span class="burgerIcon__bar"></span> 
+                    <span class="burgerIcon__bar"></span>
                     <span class="burgerIcon__bar"></span>
                 </div>
             </nav>
@@ -119,7 +119,7 @@
                         input:hover, textarea:hover, input:focus, textarea:focus {
                             border-color: #66FFFF;
                             box-shadow: 5px 0px 9px #FF00FF;
-                            background-color: #66FFFF
+                            background-color: #FFFFFF;
                             color: black;
                             font-weight: bold;
                         }
@@ -160,126 +160,103 @@
             <div class="footer__information">
 
             </div>
-        </footer>    
+        </footer>
         <script src="../assets/js/script.js"></script>
             <script type="text/javascript">
-                function valida_form() { 
-                var x=document.forms["meu_form"]["emailid"].value; 
-                var atpos=x.indexOf("@"); 
-                var dotpos=x.lastIndexOf("."); 
-                if (atpos<1) {
-                    alert('Inclua um "@" no endereço de e-mail. "' + x + '" está com um "@" faltando.');
-                    return false;
+                function valida_form() {
+                    var x=document.forms["meu_form"]["emailid"].value;
+                    var atpos=x.indexOf("@");
+                    var dotpos=x.lastIndexOf(".");
+                    if (atpos<1) {
+                        alert('Inclua um "@" no endereço de e-mail. "' + x + '" está com um "@" faltando.');
+                        return false;
+                    }
+                    else if (dotpos<atpos+2) {
+                        alert('Incira uma parte depois de "@". "' + x + '" está incompleto.');
+                        return false;
+                    }
+                    else if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+                        alert('"." está sendo usado em uma posição incorreta em "' + x + '".');
+                        return false
+                    }
+                    else if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+                        alert("Não é um endereço de e-mail válido");
+                        return false;
+                    } else
+                    return true;
                 }
-                else if (dotpos<atpos+2) {
-                    alert('Incira uma parte depois de "@". "' + x + '" está incompleto.');
-                    return false;
-                }
-                else if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
-                    alert('"." está sendo usado em uma posição incorreta em "' + x + '".');
-                    return false
-                }
-                else if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) { 
-                    alert("Não é um endereço de e-mail válido"); 
-                    return false; 
-                } else
-                return true; 
-                }
-      function Enviar() {
-        var nome = document.getElementById("nomeid");
-        var fone = document.getElementById("foneid");
-        var email = document.getElementById("emailid");
-        var texto = document.getElementById("textoid");
-        if (
-          (nome.value != "") &&
-          (fone.value != "") &&
-          (email.value != "") &&
-          (texto.value != "") &&
-          (valida_form(true) == true)
-        ) {
-          alert('Obrigado sr(a) ' + nome.value + ' os seus dados foram encaminhados com sucesso.');
-        }
-      }
-      
-      var nodemailer = require('nodemailer'); 
-      
-      // O primeiro passo é configurar um transporte para este 
-      // e-mail, precisamos dizer qual servidor será o encarregado 
-      // por enviá-lo: 
-      
-      var transporte = nodemailer.createTransport({ 
-        service: 'Gmail', // Como mencionei, vamos usar o Gmail 
-        auth: { 
-          user: 'cintia.leite.prof@gmail.com', // Basta dizer qual o nosso usuário 
-          pass: 'titaleite*85' // e a senha da nossa conta 
-        } 
-      }); 
-      
-      // Após configurar o transporte chegou a hora de criar um e-mail 
-      // para enviarmos, para isso basta criar um objeto com algumas configurações 
-      
-      var email = { 
-        from: 'cintia.leite.prof@gmail.com', // Quem enviou este e-mail 
-        to: 'cintia.leite.prof@gmail.com', // Quem receberá 
-        subject: 'Node.js ♥ unicode', // Um assunto bacana :-) 
-        html: 'E-mail foi enviado do <strong>Node.js</strong>' // O conteúdo do e-mail 
-      }; 
-      
-      // Pronto, tudo em mãos, basta informar para o transporte 
-      // que desejamos enviar este e-mail 
-      
-      transporte.sendMail(email, function(err, info){ 
-        if(err) 
-          throw err; // Oops, algo de errado aconteceu. 
-          alert('Erro ao enviar!');
-        
-        console.log('Email enviado! Leia as informações adicionais: ', info); 
-        alert('Email enviado!');
-      });
-      
-      
-      
-      
-      
-      /*
-      var email = { 
-        from: 'usuario@gmail.com', 
-        to: 'alanhoffmeister@gmail.com', 
-        subject: 'Veja os anexos', 
-        html: 'Estou mandando alguns anexos para testar.' 
-        attachments: [{ // Basta incluir esta chave e listar os anexos 
-          filename: 'boleto.pdf', // O nome que aparecerá nos anexos 
-          path: 'servidor/boletos/boleto_gerado1234.pdf' // O arquivo será lido neste local ao ser enviado 
-        }] 
-      }; 
-      
-      // Pronto, basta enviar! 
-      transporte.sendMail(email, function(err){ 
-        if(err) 
-          throw err; // Oops, algo de errado aconteceu. 
-        
-        console.log('Email enviado!'); 
-      });
-      
-      */
-      
-      
-      
-      
-    </script>
+                function Enviar() {
+                    var nome = document.getElementById("nomeid");
+                    var fone = document.getElementById("foneid");
+                    var email = document.getElementById("emailid");
+                    var texto = document.getElementById("textoid");
+                    if (
+                        (nome.value != "") &&
+                        (fone.value != "") &&
+                        (email.value != "") &&
+                        (texto.value != "") &&
+                        (valida_form(true) == true)
+                    ) {
+                        alert('Obrigado sr(a) ' + nome.value + ' os seus dados foram encaminhados com sucesso.');
 
+                    }
+                }
+
+                var nodemailer = require('nodemailer');
+
+                // O primeiro passo é configurar um transporte para este
+                // e-mail, precisamos dizer qual servidor será o encarregado
+                // por enviá-lo:
+
+                var transporte = nodemailer.createTransport({
+                    service: 'Gmail', // Como mencionei, vamos usar o Gmail
+                    auth: {
+                        user: 'cintia.leite.prof@gmail.com', // Basta dizer qual o nosso usuário
+                        pass: 'titaleite*85' // e a senha da nossa conta
+                    }
+                });
+
+                // Após configurar o transporte chegou a hora de criar um e-mail
+                // para enviarmos, para isso basta criar um objeto com algumas configurações
+
+                var email = {
+                    from: 'cintia.leite.prof@gmail.com', // Quem enviou este e-mail
+                    to: 'cintia.leite.prof@gmail.com', // Quem receberá
+                    subject: 'Node.js ♥ unicode', // Um assunto bacana :-)
+                    html: 'E-mail foi enviado do <strong>Node.js</strong>' // O conteúdo do e-mail
+                };
+
+                // Pronto, tudo em mãos, basta informar para o transporte
+                // que desejamos enviar este e-mail
+
+                transporte.sendMail(email, function(err, info){
+                    if(err)
+                    throw err; // Oops, algo de errado aconteceu.
+                    alert('Erro ao enviar!');
+
+                    console.log('Email enviado! Leia as informações adicionais: ', info);
+                    alert('Email enviado!');
+                });
+                /*
+                var email = {
+                    from: 'usuario@gmail.com',
+                    to: 'alanhoffmeister@gmail.com',
+                    subject: 'Veja os anexos',
+                    html: 'Estou mandando alguns anexos para testar.'
+                    attachments: [{ // Basta incluir esta chave e listar os anexos
+                        filename: 'boleto.pdf', // O nome que aparecerá nos anexos
+                        path: 'servidor/boletos/boleto_gerado1234.pdf' // O arquivo será lido neste local ao ser enviado
+                    }]
+                };
+
+                // Pronto, basta enviar!
+                transporte.sendMail(email, function(err){
+                    if(err)
+                    throw err; // Oops, algo de errado aconteceu.
+
+                    console.log('Email enviado!');
+                });
+                */
+        </script>
     </body>
 </html>
-<!--
-
-<div class="mapouter">
-<div class="gmap_canvas">
-<iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="">
-</iframe><a href="https://embed-googlemap.com">embed code google maps</a>
-</div>
-<style>.mapouter{position:relative;text-align:right;width:600px;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:600px;height:400px;}.gmap_iframe {width:600px!important;height:400px!important;}</style></div>
-
-
-
-<div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Mendes da Rocha&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://embed-googlemap.com">embed code google maps</a></div><style>.mapouter{position:relative;text-align:right;width:600px;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:600px;height:400px;}.gmap_iframe {width:600px!important;height:400px!important;}</style></div>
--->
