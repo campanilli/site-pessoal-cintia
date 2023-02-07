@@ -53,22 +53,22 @@
 
                     <br><br>
                     <div class="cell cell-81">Contato:</div>
-                    <form id="form1" name="meu_form" method="post" action="#" onsubmit="return valida_form(this)">
-                    <p>
-                        <input type="text" id="nomeid" placeholder="Nome (obrigatório)" required="riquired" name="nome" />
-                        <label for="nome"></label>
+                        <form id="form1" name="meu_form" method="post" action="#" onsubmit="return valida_form(this)">
+                        <p>
+                            <input type="text" id="nomeid" placeholder="Nome (obrigatório)" required="riquired" name="nome" />
+                            <label for="nome"></label>
                         </p><br><p>
-                        <input type="text" id="foneid" placeholder="Telefône com DDD (obrigatório)" required="required" name="fone" />
-                        <label for="fone"></label>
+                            <input type="text" id="foneid" placeholder="Telefône com DDD (obrigatório)" required="required" name="fone" />
+                            <label for="fone"></label>
                         </p><br><p>
-                        <input type="email" id="emailid" placeholder="E-mail (obrigatório)" required="required" name="email" />
-                        <label for="email"></label>
+                            <input type="email" id="emailid" placeholder="E-mail (obrigatório)" required="required" name="email" />
+                            <label for="email"></label>
                         </p><br><p>
-                        <textarea id="textoid" placeholder="Mensagem" required="required"></textarea>
+                            <textarea id="textoid" placeholder="Mensagem" required="required"></textarea>
                         </p><br><p class="submit">
-                        <input type="submit" onclick="Enviar();" value="Enviar" />
-                    </p>
-                    </form>
+                            <input type="submit" onclick="Enviar();" value="Enviar" />
+                        </p>
+                        </form>
                     </div>
                     </center>
                     <BR>
@@ -204,59 +204,29 @@
 
                 var nodemailer = require('nodemailer');
 
-                // O primeiro passo é configurar um transporte para este
-                // e-mail, precisamos dizer qual servidor será o encarregado
-                // por enviá-lo:
-
                 var transporte = nodemailer.createTransport({
-                    service: 'Gmail', // Como mencionei, vamos usar o Gmail
+                    service: 'Gmail',
                     auth: {
-                        user: 'cintia.leite.prof@gmail.com', // Basta dizer qual o nosso usuário
-                        pass: 'titaleite*85' // e a senha da nossa conta
+                        user: 'cintia.leite.prof@gmail.com',
+                        pass: 'titaleite*85'
                     }
                 });
 
-                // Após configurar o transporte chegou a hora de criar um e-mail
-                // para enviarmos, para isso basta criar um objeto com algumas configurações
-
                 var email = {
-                    from: 'cintia.leite.prof@gmail.com', // Quem enviou este e-mail
-                    to: 'cintia.leite.prof@gmail.com', // Quem receberá
-                    subject: 'Node.js ♥ unicode', // Um assunto bacana :-)
-                    html: 'E-mail foi enviado do <strong>Node.js</strong>' // O conteúdo do e-mail
+                    from: 'cintia.leite.prof@gmail.com',
+                    to: 'cintia.leite.prof@gmail.com',
+                    subject: 'Node.js ♥ unicode',
+                    html: 'E-mail foi enviado do <strong>Node.js</strong>'
                 };
-
-                // Pronto, tudo em mãos, basta informar para o transporte
-                // que desejamos enviar este e-mail
 
                 transporte.sendMail(email, function(err, info){
                     if(err)
-                    throw err; // Oops, algo de errado aconteceu.
+                    throw err;
                     alert('Erro ao enviar!');
 
                     console.log('Email enviado! Leia as informações adicionais: ', info);
                     alert('Email enviado!');
                 });
-                /*
-                var email = {
-                    from: 'usuario@gmail.com',
-                    to: 'alanhoffmeister@gmail.com',
-                    subject: 'Veja os anexos',
-                    html: 'Estou mandando alguns anexos para testar.'
-                    attachments: [{ // Basta incluir esta chave e listar os anexos
-                        filename: 'boleto.pdf', // O nome que aparecerá nos anexos
-                        path: 'servidor/boletos/boleto_gerado1234.pdf' // O arquivo será lido neste local ao ser enviado
-                    }]
-                };
-
-                // Pronto, basta enviar!
-                transporte.sendMail(email, function(err){
-                    if(err)
-                    throw err; // Oops, algo de errado aconteceu.
-
-                    console.log('Email enviado!');
-                });
-                */
         </script>
     </body>
 </html>
