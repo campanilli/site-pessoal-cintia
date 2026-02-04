@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profª Cintia Leite - Historiadora, Educadora e Especialista em História das Mulheres | Aulas Online</title>
+    <meta name="description" content="Professora Cintia Leite - Historiadora especializada em aulas de História, Geografia, Sociologia e Filosofia. Orientação de TCCs e aulas online para todo o Brasil. Formação de cidadãos conscientes com excelência acadêmica.">
+    <meta name="keywords" content="professora de história, aulas online, orientação de TCC, história, geografia, sociologia, filosofia, São Paulo, Cintia Leite, ensino médio, aulas particulares">
+    <meta name="author" content="Cintia Leite">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.cintialeite.com.br">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Profª Cintia Leite - Historiadora e Educadora">
+    <meta property="og:description" content="Aulas de História, Geografia, Sociologia e Filosofia com foco na formação do cidadão. Orientação de TCCs e aulas online para todo o Brasil.">
+    <meta property="og:image" content="https://www.cintialeite.com.br/imagens/cintia-leite.jpg">
+    <meta property="og:url" content="https://www.cintialeite.com.br">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Profª Cintia Leite - Historiadora e Educadora">
+    <meta name="twitter:description" content="Aulas de História, Geografia, Sociologia e Filosofia com excelência acadêmica.">
+    <meta name="twitter:image" content="https://www.cintialeite.com.br/imagens/cintia-leite.jpg">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #6a1b9a;
+            --secondary-color: #9c27b0;
+            --accent-color: #e1bee7;
+            --light-color: #f3e5f5;
+            --dark-color: #4a148c;
+            --text-color: #333;
+            --light-text: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #fff;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            position: relative;
+        }
+        
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("/api/placeholder/1200/600");
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid var(--accent-color);
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+        
+        nav {
+            background-color: var(--dark-color);
+            padding: 1rem;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 1rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        section {
+            padding: 3rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1, h2, h3 {
+            color: var(--primary-color);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            margin-bottom: 1rem;
+        }
+        
+        .biografia p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+        
+        .areas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .area-card {
+            flex: 1 1 300px;
+            background-color: var(--light-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .area-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+        
+        .area-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .filosofia {
+            background-color: var(--light-color);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 2rem;
+            position: relative;
+        }
+        
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .quote::before {
+            content: """;
+            font-size: 2.5rem;
+            position: absolute;
+            left: 0;
+            top: -0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .cta {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: white;
+            transform: scale(1.05);
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        
+        .social-links {
+            margin: 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s, transform 0.3s;
+            padding: 0.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+            transform: scale(1.1);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .resultados {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+        
+        .chart-container {
+            flex: 1 1 400px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .resultados-texto {
+            flex: 1 1 400px;
+        }
+        
+        .resultados-texto p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+        
+        .resultados-lista {
+            list-style: none;
+            margin: 1rem 0;
+        }
+        
+        .resultados-lista li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .resultados-lista li::before {
+            content: "✓";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        /* Estilos para o formulário */
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(106, 27, 154, 0.2);
+        }
+        
+        .form-select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236a1b9a' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 16px 12px;
+        }
+        
+        .form-submit {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .form-submit:hover {
+            background-color: var(--dark-color);
+            transform: scale(1.05);
+        }
+        
+        .form-text {
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            color: #666;
+        }
+        
+        /* Notificação de formulário enviado */
+        .form-success {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            display: none;
+        }
+        
+        /* Estilos para o campo de disciplina */
+        #campoDisciplina {
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        #campoDisciplina label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        #campoDisciplina select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .social-links {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-overlay"></div>
+        <div class="header-content">
+            <!-- <img src="/api/placeholder/180/180" alt="Professora Cintia Leite" class="profile-image"> -->
+            <img src="D:\User\n5546231\OneDrive\Projetos\mei-school\foto-cintia.jpg" alt="Professora Cintia Leite" class="profile-image">
+            <h1>Profa. Cintia Leite</h1>
+            <p class="subtitle">Historiadora, Educadora e Formadora de Cidadãos</p>
+        </div>
+    </header>
+    
+    <!-- Navegação -->
+    <nav>
+        <ul>
+            <li><a href="#sobre">Sobre Mim</a></li>
+            <li><a href="#areas">Áreas de Atuação</a></li>
+            <li><a href="#resultados">Resultados</a></li>
+            <li><a href="#filosofia">Filosofia de Ensino</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Seção Sobre -->
+    <section id="sobre" class="biografia">
+        <h2>Quem sou eu</h2>
+        <p>Sou natural de São Paulo - Capital. Historiadora, habilitada pelo Centro Universitário Sant'Anna, pós graduada em Docência no Ensino Superior através do Centro Universitário Nove de Julho e pós graduada em História das mulheres no Brasil ministrado por Mary Del Priori, também atuo como docente nas áreas de Geografia, Sociologia e Filosofia assim como Itinerários formativos de História e Projeto de vida já me adequando ao Novo Ensino Médio.</p>
+        
+        <p>Sempre buscando preparar o educando para os desafios que ele enfrentará, atuo também como orientadora de TCC's para alunos do Ensino Médio com o propósito de prepara-los para a futura graduação. Interagir com a galerinha é o que me faz sentir viva e ver os olhinhos brilhando a cada nova descoberta me faz entender que é isso que eu quero fazer para sempre.</p>
+        
+        <p>A pandemia foi um momento extremamente triste para toda a população mundial, mas como sempre precisamos olhar o copo meio cheio, esse momento me levou a mais uma metamorfose onde me reinventei e passei também a ministrar aulas de forma remota (online) atendendo alunos de todo o Brasil através de plataformas que tem como objetivo ampliar o acesso a aulas de reforço para facilitar ainda mais o processo ensino-aprendizagem.</p>
+    </section>
+    
+    <!-- Áreas de Atuação -->
+    <section id="areas">
+        <h2>Áreas de Atuação</h2>
+        
+        <div class="areas">
+            <div class="area-card">
+                <i class="fas fa-landmark"></i>
+                <h3>História</h3>
+                <p>Formação principal com foco na construção crítica do conhecimento histórico e formação cidadã.</p>
+            </div>
+            
+            <div class="area-card">
+                <i class="fas fa-globe-americas"></i>
+                <h3>Geografia</h3>
+                <p>Estudo das relações entre sociedade e espaço, desenvolvendo o pensamento geográfico e socioambiental.</p>
+            </div>
+            
+            <div class="area-card">
+                <i class="fas fa-users"></i>
+                <h3>Sociologia</h3>
+                <p>Análise das relações sociais e estruturas da sociedade, despertando o olhar crítico sobre fenômenos sociais.</p>
+            </div>
+            
+            <div class="area-card">
+                <i class="fas fa-brain"></i>
+                <h3>Filosofia</h3>
+                <p>Desenvolvimento do pensamento crítico e reflexivo sobre questões fundamentais da existência humana.</p>
+            </div>
+            
+            <div class="area-card">
+                <i class="fas fa-newspaper"></i>
+                <h3>Atualidades</h3>
+                <p>Informações sobre temas contemporâneos e relevantes para a sociedade.</p>
+            </div>
+
+            <div class="area-card">
+                <i class="fas fa-user-graduate"></i>
+                <h3>Projeto de Vida</h3>
+                <p>Apoio e direcionamento para planejamento pessoal e profissional.</p>
+            </div>
+
+            <div class="area-card">
+                <i class="fas fa-book"></i>
+                <h3>Orientação de TCC</h3>
+                <p>Preparação de alunos do Ensino Médio para o desenvolvimento de trabalhos acadêmicos e pesquisa científica.</p>
+            </div>
+            
+            <div class="area-card">
+                <i class="fas fa-laptop"></i>
+                <h3>Aulas Online</h3>
+                <p>Atendimento a estudantes de todo o Brasil com aulas remotas personalizadas e de reforço escolar.</p>
+            </div>
+
+        </div>
+    </section>
+    
+    <!-- Resultados -->
+    <section id="resultados">
+        <h2>Resultados Comprovados</h2>
+        
+        <div class="resultados">
+            <div class="chart-container">
+                <canvas id="approvalChart"></canvas>
+            </div>
+            
+            <div class="resultados-texto">
+                <h3>Excelência em aprovações</h3>
+                <p>A metodologia única desenvolvida pela Profa. Cintia Leite tem demonstrado resultados expressivos nas mais diversas instituições de ensino do país. Sua abordagem integra conhecimento histórico profundo com técnicas pedagógicas inovadoras, resultando em altos índices de aprovação.</p>
+                
+                <p>O método de ensino da Profa. Cintia se destaca por:</p>
+                
+                <ul class="resultados-lista">
+                    <li><strong>Contextualização histórica</strong> que conecta passado e presente, tornando o conteúdo relevante e significativo</li>
+                    <li><strong>Abordagem interdisciplinar</strong> que integra História, Geografia, Sociologia e Filosofia, ampliando a visão de mundo</li>
+                    <li><strong>Desenvolvimento de habilidades analíticas</strong> essenciais para provas dissertativas e de múltipla escolha</li>
+                    <li><strong>Técnicas de memorização eficiente</strong> para datas, eventos e processos históricos complexos</li>
+                    <li><strong>Orientação personalizada</strong> que respeita o ritmo de aprendizagem de cada estudante</li>
+                </ul>
+                
+                <p>Os resultados falam por si: índices de aprovação de 95% em Instituições Federais de Educação, 90% em Universidades Federais e 80% nas principais Universidades e Faculdades Privadas do país. Mais que números, estes resultados representam sonhos realizados e trajetórias transformadas pelo poder do conhecimento.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Filosofia de Ensino -->
+    <section id="filosofia">
+        <h2>Minha Filosofia de Ensino</h2>
+        
+        <div class="filosofia">
+            <p class="quote">Como professora de história meu foco é a formação do cidadão onde o aluno vai descobrir que ele é o agente principal e fundamental da sua história, sempre buscando excelência, com mecanismos de mídia e tecnologia formamos cidadãos fortes e conscientes do seu papel e contribuição para a sociedade.</p>
+            
+            <p>Acredito no futuro da nação e acredito no potencial dessa geração. Meu compromisso é despertar em cada aluno a consciência de seu papel como agente de transformação e construtor de sua própria história.</p>
+            
+            <p>Em minhas aulas, trabalho com metodologias ativas e recursos tecnológicos para tornar o aprendizado mais significativo e conectado com a realidade dos estudantes. Busco criar um ambiente onde o conhecimento histórico se torna relevante para a compreensão do mundo contemporâneo.</p>
+        </div>
+    </section>
+    
+    <!-- Call to Action -->
+    <section class="cta">
+        <h2>Vamos trabalhar juntos?</h2>
+        <p>Entre em contato para aulas particulares, orientação de trabalhos acadêmicos ou palestras.</p>
+        <a href="#contato" class="btn">Agendar uma Aula</a>
+    </section>
+    
+    <!-- Contato com Formspree -->
+    <section id="contato">
+        <h2>Entre em Contato</h2>
+        
+        <!-- Mensagem de sucesso (inicialmente oculta) -->
+        <div id="formSuccess" class="form-success">
+            Mensagem enviada com sucesso! Entrarei em contato em breve.
+        </div>
+        
+        <!-- Formulário com Formspree -->
+        <form action="https://formspree.io/f/xrbparzk" method="POST" id="contactForm" onsubmit="return validarFormulario()">
+            <div class="form-group">
+                <label for="nome" class="form-label">Nome:</label>
+                <input type="text" id="nome" placeholder="Nome (obrigatório)" name="nome" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="fone" class="form-label">Telefone:</label>
+                <input type="text" id="fone" placeholder="Telefone com DDD (obrigatório)" name="fone" class="form-control" required maxlength="15" onkeyup="formatarTelefone(this)">
+            </div>
+            
+            <div class="form-group">
+                <label for="email" class="form-label">E-mail:</label>
+                <input type="email" id="email" placeholder="E-mail (obrigatório)" name="email" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="assunto" class="form-label">Assunto:</label>
+                <select id="assunto" name="assunto" class="form-select" required>
+                    <option value="">Selecione uma opção</option>
+                    <option value="aula">Aulas Particulares</option>
+                    <option value="orientacao">Orientação de TCC</option>
+                    <option value="palestra">Palestras</option>
+                    <option value="outro">Outro</option>
+                </select>
+            </div>
+            
+            <div id="campoDisciplina" style="display: none;">
+                <label for="disciplina">Disciplina:</label>
+                <select id="disciplina" name="disciplina" class="form-select">
+                    <option value="">Selecione a disciplina...</option>
+                    <option value="História">História</option>
+                    <option value="Geografia">Geografia</option>
+                    <option value="Filosofia">Filosofia</option>
+                    <option value="Sociologia">Sociologia</option>
+                    <option value="Projeto de Vida">Projeto de Vida</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="data-agendamento" class="form-label">Data para Agendamento:</label>
+                <input type="date" id="data-agendamento" name="data-agendamento" class="form-control" min="" required>
+                <p class="form-text">Selecione uma data (exceto domingos).</p>
+            </div>
+
+            <div class="form-group">
+                <label for="hora-agendamento" class="form-label">Horário disponível:</label>
+                <select id="hora-agendamento" name="hora-agendamento" class="form-select" required disabled>
+                    <option value="">Selecione uma data primeiro</option>
+                </select>
+                <p class="form-text">As sessões têm duração de 40 minutos.</p>
+            </div>
+            <div class="form-group">
+                <label for="mensagem" class="form-label">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="5" class="form-control" required></textarea>
+            </div>
+            
+            <!-- Campo oculto para detectar bots -->
+            <input type="text" name="_gotcha" style="display:none">
+            
+            <button type="submit" class="form-submit">Enviar Mensagem</button>
+            
+            <p class="form-text">Seus dados estão seguros e não serão compartilhados com terceiros.</p>
+
+        </form>
+    </section>
+    
+    <!-- Rodapé -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com/tita.campanilli" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/titacampanilli" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://br.linkedin.com/in/cintia-pereira-leite-224677238" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/c/5511952269643" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.youtube.com/@titamilk1" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://profes.com.br/cintia.pereira.leite" target="_blank" title="Profes"><i class="fas fa-chalkboard-teacher"></i></a>
+        </div>
+        <p>&copy; 2025 Profa. Cintia Leite - Todos os direitos reservados</p>
+    </footer>
+    
+    <script>
+        // Script para validação e envio do formulário
+        document.addEventListener('DOMContentLoaded', function() {
+            // Chart.js - Gráfico de aprovações
+            const ctx = document.getElementById('approvalChart').getContext('2d');
+            
+            const approvalChart = new Chart(ctx, {
+                type: 'polarArea',
+                data: {
+                    labels: [
+                        'Universidades Federais',
+                        'Universidades e Faculdades Privadas',
+                        'Instituições Federais de Educação'
+                    ],
+                    datasets: [{
+                        label: 'Taxa de Aprovação',
+                        data: [90, 80, 95],
+                        backgroundColor: [
+                            'rgba(106, 27, 154, 0.7)',
+                            'rgba(156, 39, 176, 0.7)',
+                            'rgba(74, 20, 140, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgba(106, 27, 154, 1)',
+                            'rgba(156, 39, 176, 1)',
+                            'rgba(74, 20, 140, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Percentual de Aprovação por Tipo de Instituição',
+                            font: {
+                                size: 16
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.label + ': ' + context.raw + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Adicionar o listener de eventos para o Formspree
+            const contactForm = document.getElementById('contactForm');
+            const formSuccess = document.getElementById('formSuccess');
+            
+            if (contactForm) {
+                // Usar o evento de submissão bem-sucedida do Formspree
+                window.addEventListener("formspree:submitted", function() {
+                    // Mostrar a mensagem de sucesso
+                    formSuccess.style.display = 'block';
+                    contactForm.reset();
+                    // Rolar até a mensagem de sucesso
+                    window.location.hash = 'formSuccess';
+                });
+            }
+        });
+
+        // Função para formatar o telefone enquanto o usuário digita
+        function formatarTelefone(input) {
+            // Remove todos os caracteres que não são dígitos
+            let value = input.value.replace(/\D/g, '');
+            
+            // Se não houver valor, não faz nada
+            if (!value) {
+                input.value = '';
+                return;
+            }
+            
+            // Verifica se é celular (9 dígitos) ou fixo (8 dígitos)
+            let isCelular = value.length > 10;
+            
+            // Formata o número dependendo da quantidade de dígitos
+            if (value.length <= 2) {
+                // Só o DDD
+                input.value = '(' + value;
+            } else if (value.length <= 6) {
+                // DDD e início do número
+                input.value = '(' + value.substring(0, 2) + ') ' + value.substring(2);
+            } else if (isCelular) {
+                // Celular com 9 dígitos
+                if (value.length <= 11) {
+                    input.value = '(' + value.substring(0, 2) + ') ' + value.substring(2, 7) + '-' + value.substring(7);
+                } else {
+                    input.value = '(' + value.substring(0, 2) + ') ' + value.substring(2, 7) + '-' + value.substring(7, 11);
+                }
+            } else {
+                // Telefone fixo
+                if (value.length <= 10) {
+                    input.value = '(' + value.substring(0, 2) + ') ' + value.substring(2, 6) + '-' + value.substring(6);
+                } else {
+                    input.value = '(' + value.substring(0, 2) + ') ' + value.substring(2, 6) + '-' + value.substring(6, 10);
+                }
+            }
+        }
+
+        // Função para validar o formulário antes do envio
+        function validarFormulario() {
+            var nome = document.getElementById("nome");
+            var fone = document.getElementById("fone");
+            var email = document.getElementById("email");
+            var mensagem = document.getElementById("mensagem");
+            var assunto = document.getElementById("assunto");
+            
+            // Validar email
+            var emailVal = email.value;
+            var atpos = emailVal.indexOf("@");
+            var dotpos = emailVal.lastIndexOf(".");
+            
+            if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
+                alert("Por favor, informe um endereço de e-mail válido.");
+                email.focus();
+                return false;
+            }
+            
+            // Validar outros campos
+            if (nome.value === "") {
+                alert("Por favor, informe seu nome.");
+                nome.focus();
+                return false;
+            }
+            
+            if (fone.value === "") {
+                alert("Por favor, informe seu telefone.");
+                fone.focus();
+                return false;
+            }
+            
+            if (assunto.value === "") {
+                alert("Por favor, selecione um assunto.");
+                assunto.focus();
+                return false;
+            }
+            
+            if (mensagem.value === "") {
+                alert("Por favor, escreva sua mensagem.");
+                mensagem.focus();
+                return false;
+            }
+            
+            return true;
+        }
+
+        // Mostrar/ocultar campo de disciplina com base no assunto selecionado
+        document.getElementById("assunto").addEventListener("change", function() {
+            const campoDisciplina = document.getElementById("campoDisciplina");
+            if (this.value === "aula") {
+                campoDisciplina.style.display = "block";
+            } else {
+                campoDisciplina.style.display = "none";
+                document.getElementById("disciplina").value = ""; // Limpa a seleção se não for Aulas Particulares
+            }
+        });
+    </script>
+
+<script src="https://apis.google.com/js/api.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js"></script>
+<script>
+    // Configuração da API do Google Calendar
+    const CLIENT_ID = 'SEU_CLIENT_ID';
+    const API_KEY = 'SUA_API_KEY';
+    const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest';
+    const SCOPES = 'https://www.googleapis.com/auth/calendar.readonly';
+    
+    let tokenClient;
+    let gapiInited = false;
+    let gisInited = false;
+    let calendar;
+    
+    // Inicialização
+    document.addEventListener('DOMContentLoaded', function() {
+        // Inicializar a API do Google
+        gapi.load('client', initializeGapiClient);
+
+        // Adicionar estilos para o calendário e horários
+        const styles = document.createElement('style');
+        styles.textContent = `
+            #calendario-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1.5rem;
+                margin-top: 1rem;
+                margin-bottom: 2rem;
+            }
+            
+            #calendario {
+                flex: 1 1 400px;
+                min-height: 350px;
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                padding: 1rem;
+            }
+            
+            #horarios-disponiveis {
+                flex: 1 1 250px;
+                min-height: 350px;
+                background-color: var(--light-color);
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                padding: 1.5rem;
+            }
+            
+            #slots-container {
+                margin-top: 1rem;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            
+            .time-slot {
+                display: block;
+                padding: 0.5rem 1rem;
+                background-color: white;
+                border: 1px solid var(--accent-color);
+                border-radius: 4px;
+                cursor: pointer;
+                text-align: center;
+                transition: all 0.3s;
+                font-size: 0.9rem;
+            }
+            
+            .time-slot:hover {
+                background-color: var(--accent-color);
+                color: var(--dark-color);
+            }
+            
+            .time-slot.selected {
+                background-color: var(--primary-color);
+                color: white;
+                border-color: var(--primary-color);
+            }
+            
+            .time-slot.unavailable {
+                background-color: #f2f2f2;
+                color: #999;
+                cursor: not-allowed;
+                border-color: #ddd;
+            }
+            
+            .fc-day-disabled {
+                background-color: #f9f9f9;
+            }
+            
+            .selected-info {
+                margin-top: 1rem;
+                padding: 0.8rem;
+                background-color: #e8f5e9;
+                border-radius: 4px;
+                display: none;
+            }
+        `;
+        document.head.appendChild(styles);
+    });
+    
+    async function initializeGapiClient() {
+        await gapi.client.init({
+            apiKey: API_KEY,
+            discoveryDocs: [DISCOVERY_DOC],
+        });
+        gapiInited = true;
+        maybeEnableButtons();
+    }
+    
+    function initializeCalendar() {
+        const calendarEl = document.getElementById('calendario');
+        calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            height: 'auto',
+            locale: 'pt-br',
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth'
+            },
+            dateClick: function(info) {
+                carregarHorariosDisponiveis(info.dateStr);
+            },
+            selectAllow: function(selectInfo) {
+                return moment(selectInfo.start).day() !== 0; // Não permite domingos
+            },
+            dayCellClassNames: function(arg) {
+                if (arg.date.getDay() === 0) { // Domingo
+                    return ['fc-day-disabled'];
+                }
+                return [];
+            },
+            eventSources: [
+                {
+                    events: function(fetchInfo, successCallback, failureCallback) {
+                        // Buscar eventos do Google Calendar
+                        const timeMin = new Date(fetchInfo.start.valueOf());
+                        const timeMax = new Date(fetchInfo.end.valueOf());
+                        
+                        listarEventos(timeMin, timeMax)
+                            .then(events => {
+                                successCallback(events);
+                            })
+                            .catch(error => {
+                                console.error('Erro ao buscar eventos:', error);
+                                failureCallback(error);
+                            });
+                    },
+                    color: 'var(--primary-color)'
+                }
+            ]
+        });
+        
+        calendar.render();
+    }
+    
+    function maybeEnableButtons() {
+        if (gapiInited) {
+            // Inicializar o calendário
+            initializeCalendar();
+            // Carregar eventos iniciais
+            carregarEventos();
+        }
+    }
+    
+    async function carregarEventos() {
+        try {
+            await gapi.client.load('calendar', 'v3');
+            // O calendário já será atualizado pelo eventSource
+        } catch (err) {
+            console.error('Erro ao carregar eventos:', err);
+        }
+    }
+    
+    async function listarEventos(timeMin, timeMax) {
+        try {
+            const response = await gapi.client.calendar.events.list({
+                'calendarId': 'primary',
+                'timeMin': timeMin.toISOString(),
+                'timeMax': timeMax.toISOString(),
+                'showDeleted': false,
+                'singleEvents': true,
+                'orderBy': 'startTime'
+            });
+            
+            // Converter para o formato do FullCalendar
+            const events = response.result.items.map(item => {
+                return {
+                    title: 'Ocupado',
+                    start: item.start.dateTime || item.start.date,
+                    end: item.end.dateTime || item.end.date,
+                    id: item.id
+                };
+            });
+            
+            return events;
+        } catch (err) {
+            console.error('Erro ao listar eventos:', err);
+            return [];
+        }
+    }
+    
+    async function carregarHorariosDisponiveis(data) {
+        // Limpar seleção anterior
+        const slotsContainer = document.getElementById('slots-container');
+        slotsContainer.innerHTML = '';
+        document.getElementById('data_horario_selecionado').value = '';
+        
+        // Verificar se é domingo
+        const dataObj = new Date(data);
+        if (dataObj.getDay() === 0) { // Domingo
+            slotsContainer.innerHTML = '<p>Aulas não disponíveis aos domingos.</p>';
+            return;
+        }
+        
+        // Buscar eventos do dia selecionado
+        const inicio = new Date(data);
+        inicio.setHours(0, 0, 0, 0);
+        
+        const fim = new Date(data);
+        fim.setHours(23, 59, 59, 999);
+        
+        try {
+            const response = await gapi.client.calendar.events.list({
+                'calendarId': 'primary',
+                'timeMin': inicio.toISOString(),
+                'timeMax': fim.toISOString(),
+                'showDeleted': false,
+                'singleEvents': true,
+                'orderBy': 'startTime'
+            });
+            
+            const eventos = response.result.items;
+            
+            // Horários disponíveis (8h às 20h, intervalos de 40 minutos)
+            const horarios = [];
+            const horaInicio = 8;
+            const horaFim = 20;
+            
+            // Criar slots de 40 minutos
+            for (let hora = horaInicio; hora < horaFim; hora++) {
+                for (let minuto = 0; minuto < 60; minuto += 40) {
+                    const horaFormatada = hora.toString().padStart(2, '0');
+                    const minutoFormatado = minuto.toString().padStart(2, '0');
+                    
+                    // Verificar se o slot atual está ocupado
+                    const dataHoraInicio = new Date(data);
+                    dataHoraInicio.setHours(hora, minuto, 0, 0);
+                    
+                    const dataHoraFim = new Date(dataHoraInicio);
+                    dataHoraFim.setMinutes(dataHoraInicio.getMinutes() + 40);
+                    
+                    // Verificar conflitos
+                    let disponivel = true;
+                    for (const evento of eventos) {
+                        const eventoInicio = new Date(evento.start.dateTime || evento.start.date);
+                        const eventoFim = new Date(evento.end.dateTime || evento.end.date);
+                        
+                        // Verificar se há sobreposição
+                        if (
+                            (dataHoraInicio >= eventoInicio && dataHoraInicio < eventoFim) ||
+                            (dataHoraFim > eventoInicio && dataHoraFim <= eventoFim) ||
+                            (dataHoraInicio <= eventoInicio && dataHoraFim >= eventoFim)
+                        ) {
+                            disponivel = false;
+                            break;
+                        }
+                    }
+                    
+                    horarios.push({
+                        hora: `${horaFormatada}:${minutoFormatado}`,
+                        disponivel: disponivel,
+                        dataHoraInicio: dataHoraInicio,
+                        dataHoraFim: dataHoraFim
+                    });
+                }
+            }
+            
+            // Exibir horários no container
+            horarios.forEach(slot => {
+                const slotElement = document.createElement('button');
+                slotElement.type = 'button';
+                slotElement.className = `time-slot ${slot.disponivel ? '' : 'unavailable'}`;
+                slotElement.textContent = `${slot.hora} - ${adicionarMinutos(slot.hora, 40)}`;
+                
+                if (slot.disponivel) {
+                    slotElement.addEventListener('click', () => {
+                        // Remover seleção anterior
+                        document.querySelectorAll('.time-slot.selected').forEach(el => {
+                            el.classList.remove('selected');
+                        });
+                        
+                        // Selecionar atual
+                        slotElement.classList.add('selected');
+                        
+                        // Atualizar campo oculto
+                        const dataFormatada = new Date(data).toLocaleDateString('pt-BR');
+                        document.getElementById('data_horario_selecionado').value = 
+                            `${dataFormatada} ${slot.hora} - ${adicionarMinutos(slot.hora, 40)}`;
+                        
+                        // Adicionar informação visual
+                        let infoEl = document.querySelector('.selected-info');
+                        if (!infoEl) {
+                            infoEl = document.createElement('div');
+                            infoEl.className = 'selected-info';
+                            document.getElementById('horarios-disponiveis').appendChild(infoEl);
+                        }
+                        
+                        infoEl.textContent = `Aula agendada para ${dataFormatada} das ${slot.hora} às ${adicionarMinutos(slot.hora, 40)}`;
+                        infoEl.style.display = 'block';
+                    });
+                }
+                
+                slotsContainer.appendChild(slotElement);
+            });
+            
+            if (horarios.filter(slot => slot.disponivel).length === 0) {
+                slotsContainer.innerHTML = '<p>Não há horários disponíveis para esta data.</p>';
+            }
+            
+        } catch (err) {
+            console.error('Erro ao carregar horários:', err);
+            slotsContainer.innerHTML = '<p>Erro ao carregar horários. Tente novamente.</p>';
+        }
+    }
+    
+    function adicionarMinutos(hora, minutos) {
+        const [h, m] = hora.split(':').map(Number);
+        const data = new Date();
+        data.setHours(h, m);
+        data.setMinutes(data.getMinutes() + minutos);
+        
+        return `${data.getHours().toString().padStart(2, '0')}:${data.getMinutes().toString().padStart(2, '0')}`;
+    }
+    
+    // Modificar a função de validação do formulário
+    function validarFormulario() {
+        var nome = document.getElementById("nome");
+        var fone = document.getElementById("fone");
+        var email = document.getElementById("email");
+        var mensagem = document.getElementById("mensagem");
+        var assunto = document.getElementById("assunto");
+        var dataHorario = document.getElementById("data_horario_selecionado");
+        
+        // Validações existentes
+        var emailVal = email.value;
+        var atpos = emailVal.indexOf("@");
+        var dotpos = emailVal.lastIndexOf(".");
+        
+        if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
+            alert("Por favor, informe um endereço de e-mail válido.");
+            email.focus();
+            return false;
+        }
+        
+        if (nome.value === "") {
+            alert("Por favor, informe seu nome.");
+            nome.focus();
+            return false;
+        }
+        
+        if (fone.value === "") {
+            alert("Por favor, informe seu telefone.");
+            fone.focus();
+            return false;
+        }
+        
+        if (assunto.value === "") {
+            alert("Por favor, selecione um assunto.");
+            assunto.focus();
+            return false;
+        }
+        
+        if (mensagem.value === "") {
+            alert("Por favor, escreva sua mensagem.");
+            mensagem.focus();
+            return false;
+        }
+        
+        // Nova validação para agendamento
+        if (assunto.value === "aula" && dataHorario.value === "") {
+            alert("Por favor, selecione uma data e horário para a aula.");
+            document.getElementById('calendario').scrollIntoView();
+            return false;
+        }
+        
+        return true;
+    }
+
+    // Configurações para agendamento de aulas
+    document.addEventListener('DOMContentLoaded', function() {
+        const dataAgendamento = document.getElementById('data-agendamento');
+        const horaAgendamento = document.getElementById('hora-agendamento');
+        
+        // Define a data mínima como hoje
+        const hoje = new Date();
+        const dataMinima = hoje.toISOString().split('T')[0];
+        dataAgendamento.min = dataMinima;
+        
+        // Horários disponíveis para agendamento (início das sessões de 40min)
+        const horariosDisponiveis = [
+            /*'08:00', '08:40', '09:20', '10:00', '10:40', '11:20', '12:00', 
+            '13:00', '13:40', '14:20', '15:00', '15:40', '16:20', '17:00', '17:40'*/
+            '14:20', '15:00', '15:40', '16:20', '17:00', '17:40'
+        ];
+        
+        // Evento para quando a data é alterada
+        dataAgendamento.addEventListener('change', function() {
+            const dataEscolhida = new Date(this.value);
+            
+            // Verifica se é domingo (0 = domingo, 1 = segunda, etc)
+            if (dataEscolhida.getDay() === 0) {
+                alert('Não são permitidos agendamentos aos domingos. Por favor, escolha outra data.');
+                this.value = '';
+                horaAgendamento.disabled = true;
+                horaAgendamento.innerHTML = '<option value="">Selecione uma data primeiro</option>';
+                return;
+            }
+            
+            // Habilita o campo de horário
+            horaAgendamento.disabled = false;
+            
+            // Consulta a API do Outlook para obter compromissos
+            consultarAgendaOutlook(dataEscolhida);
+        });
+        
+        // Função para consultar a agenda do Outlook
+        function consultarAgendaOutlook(data) {
+            // Reset do campo de horários
+            horaAgendamento.innerHTML = '<option value="">Carregando horários disponíveis...</option>';
+            
+            // Formata a data para o padrão esperado pela API
+            const dataFormatada = data.toISOString().split('T')[0];
+            
+            // Aqui você precisará configurar sua API Microsoft Graph
+            // Esta é uma simulação da consulta à API do Outlook
+            const endpoint = `https://graph.microsoft.com/v1.0/me/calendarView?startDateTime=${dataFormatada}T00:00:00&endDateTime=${dataFormatada}T23:59:59`;
+            
+            // Simulação de resposta da API
+            // Em produção, você faria uma chamada fetch real para a API Microsoft Graph
+            simulaConsultaOutlook(dataFormatada).then(compromissosExistentes => {
+                // Filtrar horários disponíveis removendo os já agendados
+                const horariosLivres = filtrarHorariosDisponiveis(horariosDisponiveis, compromissosExistentes);
+                
+                // Preencher o select com os horários disponíveis
+                horaAgendamento.innerHTML = '<option value="">Selecione um horário</option>';
+                
+                if (horariosLivres.length === 0) {
+                    horaAgendamento.innerHTML += '<option value="" disabled>Nenhum horário disponível nesta data</option>';
+                } else {
+                    horariosLivres.forEach(horario => {
+                        // Calcular o horário de término (40 minutos depois)
+                        const [hora, minuto] = horario.split(':');
+                        const inicio = new Date();
+                        inicio.setHours(parseInt(hora), parseInt(minuto), 0);
+                        
+                        const fim = new Date(inicio);
+                        fim.setMinutes(fim.getMinutes() + 40);
+                        
+                        const horarioFim = `${fim.getHours().toString().padStart(2, '0')}:${fim.getMinutes().toString().padStart(2, '0')}`;
+                        
+                        horaAgendamento.innerHTML += `<option value="${horario}">${horario} - ${horarioFim}</option>`;
+                    });
+                }
+            }).catch(error => {
+                console.error('Erro ao consultar agenda:', error);
+                horaAgendamento.innerHTML = '<option value="">Erro ao carregar horários</option>';
+            });
+        }
+        
+        // Simulação da consulta à API do Outlook
+        // Em produção, substitua por uma chamada real à API Microsoft Graph
+        function simulaConsultaOutlook(data) {
+            return new Promise((resolve) => {
+                // Simula uma pequena latência de rede
+                setTimeout(() => {
+                    // Esta é apenas uma simulação. Em produção, você receberá dados reais da API
+                    // Exemplo de compromissos já agendados (horário de início)
+                    const compromissosSimulados = {
+                        // Simula alguns compromissos já agendados em datas diferentes
+                        // O formato é: 'YYYY-MM-DD': ['HH:MM', 'HH:MM', ...]
+                        '2025-04-01': ['09:20', '13:00', '15:40'],
+                        '2025-04-02': ['08:00', '10:00', '14:20'],
+                        '2025-04-03': ['11:20', '16:20'],
+                    };
+                    
+                    // Retorna os compromissos para a data selecionada ou um array vazio se não houver
+                    resolve(compromissosSimulados[data] || []);
+                }, 500);
+            });
+        }
+        
+        // Função para filtrar horários já ocupados
+        function filtrarHorariosDisponiveis(todosHorarios, horariosOcupados) {
+            // Remove os horários já agendados da lista de disponíveis
+            return todosHorarios.filter(horario => !horariosOcupados.includes(horario));
+        }
+        
+        // Adiciona validação para o formulário incluindo verificação de agendamento
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            const validarFormularioOriginal = window.validarFormulario;
+            
+            window.validarFormulario = function() {
+                // Primeiro, executa a validação original
+                if (!validarFormularioOriginal()) {
+                    return false;
+                }
+                
+                // Verifica se o assunto é "aula" e, nesse caso, se a data e hora foram selecionadas
+                const assunto = document.getElementById('assunto').value;
+                
+                if (assunto === 'aula') {
+                    const dataAgendamentoValue = document.getElementById('data-agendamento').value;
+                    const horaAgendamentoValue = document.getElementById('hora-agendamento').value;
+                    
+                    if (!dataAgendamentoValue) {
+                        alert('Para agendar uma aula, por favor selecione uma data.');
+                        document.getElementById('data-agendamento').focus();
+                        return false;
+                    }
+                    
+                    if (!horaAgendamentoValue) {
+                        alert('Para agendar uma aula, por favor selecione um horário disponível.');
+                        document.getElementById('hora-agendamento').focus();
+                        return false;
+                    }
+                }
+                
+                return true;
+            };
+        }
+        
+        // Mostra/oculta campos de agendamento com base no assunto selecionado
+        const assuntoSelect = document.getElementById('assunto');
+        const dataAgendamentoGroup = dataAgendamento.closest('.form-group');
+        const horaAgendamentoGroup = horaAgendamento.closest('.form-group');
+        
+        // Inicialmente oculta os campos de agendamento
+        dataAgendamentoGroup.style.display = 'none';
+        horaAgendamentoGroup.style.display = 'none';
+        
+        assuntoSelect.addEventListener('change', function() {
+            if (this.value === 'aula') {
+                dataAgendamentoGroup.style.display = 'block';
+                horaAgendamentoGroup.style.display = 'block';
+            } else {
+                dataAgendamentoGroup.style.display = 'none';
+                horaAgendamentoGroup.style.display = 'none';
+                dataAgendamento.value = '';
+                horaAgendamento.innerHTML = '<option value="">Selecione uma data primeiro</option>';
+                horaAgendamento.disabled = true;
+            }
+        });
+    });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-graph/3.27.0/microsoft-graph.min.js"></script>
+<script src="https://alcdn.msauth.net/browser/2.30.0/js/msal-browser.min.js"></script>
+<script>
+    // Configuração do MSAL para autenticação com Microsoft
+    const msalConfig = {
+        auth: {
+            clientId: "SEU_CLIENT_ID_AQUI", // Você receberá isso ao registrar seu aplicativo no Microsoft Azure
+            authority: "https://login.microsoftonline.com/common",
+            redirectUri: window.location.origin, // URL de redirecionamento após autenticação
+        },
+        cache: {
+            cacheLocation: "sessionStorage",
+            storeAuthStateInCookie: false,
+        }
+    };
+    
+    // Escopos necessários para acessar o calendário
+    const graphScopes = ["Calendars.Read", "Calendars.ReadWrite"];
+    
+    // Inicialização do cliente MSAL
+    const msalInstance = new msal.PublicClientApplication(msalConfig);
+</script>
+
+</body>
+</html>
